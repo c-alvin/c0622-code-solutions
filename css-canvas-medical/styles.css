@@ -1,0 +1,48 @@
+.container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-half {
+  flex-basis: 50%;
+}
+
+.imgsize100 {
+  width: 100px;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.anchor-decoration {
+  text-decoration: none;
+}
+
+.tiemposfont300 {
+  font-family: "Tiempos Headline", sans-serif;
+  font-weight: 300;
+}
+
+.text-lightgray {
+  color: #b2b2b2;
+}
+
+.buttonblue {
+  color: white;
+  background-color: #294363;
+  border-radius: 0.2rem;
+}
+
+.padding50 {
+  padding-top: 50px;
+}
