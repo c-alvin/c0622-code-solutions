@@ -70,3 +70,8 @@ p {
   padding-top: 20px;
   margin: -5px;
 }
+
+.padding-left-right {
+  padding-left: 60px;
+  padding-right: 60px;
+}
