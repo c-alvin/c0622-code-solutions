@@ -8,16 +8,24 @@
   display: flex;
 }
 
+.column-fifth {
+  flex-basis: 20%;
+}
+
+.column-fourth-fifth {
+  flex-basis: 80%;
+}
+
 .column-half {
   flex-basis: 50%;
 }
 
-.imgsize100 {
-  width: 100px;
+.column-full {
+  flex-basis: 100%;
 }
 
-.justify-evenly {
-  justify-content: space-evenly;
+.imgsize100 {
+  width: 100px;
 }
 
 .display-flex {
@@ -33,16 +41,92 @@
   font-weight: 300;
 }
 
+.avenirfont12 {
+  font-family: Avenir, sans-serif;
+  font-size: 12px;
+}
+
+.avenirfont10 {
+  font-family: Avenir, sans-serif;
+  font-size: 10px;
+}
+
+.avenirfont18 {
+  font-family: Avenir, sans-serif;
+  font-size: 18px;
+}
+
 .text-lightgray {
   color: #b2b2b2;
 }
 
 .buttonblue {
-  color: white;
+  color: #e4e8ec;
   background-color: #294363;
   border-radius: 0.2rem;
+  width: 5rem;
+  height: 2rem;
+  padding: 0.5rem;
+  text-align: center;
 }
 
 .padding50 {
   padding-top: 50px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+hr {
+  border-top: 1px solid #f6f7f8;
+}
+
+.background-grey {
+  background-color: #fafafa;
+}
+
+.paddingleft50 {
+  padding-left: 50px;
+}
+
+.paddingright50 {
+  padding-right: 50px;
+}
+
+.fontsize12 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.largebluebutton {
+  width: 125px;
+  height: 35px;
+  background-color: #294363;
+  color: #e4e8ec;
+  border-radius: 0.2rem;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.paddingtop25 {
+  padding-top: 25px;
 }
