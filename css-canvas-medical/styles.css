@@ -167,7 +167,7 @@ hr {
   background-image: url("images/hero.jpg");
   background-size: cover;
   object-fit: fill;
-  width: 700px;
+  width: 720px;
   height: 350px;
   position: relative;
 }
@@ -206,10 +206,14 @@ hr {
   flex-basis: 60%;
 }
 
+.paddingright40 {
+  padding-right: 40px;
+}
+
 .absolutecontainer {
   width: 375px;
   height: 400px;
-  position: absolute;
+  position: relative;
 }
 
 .absolutelargebluebutton {
@@ -255,4 +259,8 @@ hr {
 
 .rowheight300 {
   height: 300px;
+}
+
+.paddingleft40 {
+  padding-left: 40px;
 }
