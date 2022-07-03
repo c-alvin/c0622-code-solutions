@@ -1,5 +1,5 @@
 .container {
-  max-width: 1000px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -24,6 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: auto;
 }
 
 img {
@@ -61,17 +62,16 @@ p {
   text-align: center;
 }
 
-.div1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.padding250 {
-  padding: 0 250px;
+.padding50 {
+  padding: 0 50px;
 }
 
 .h3padding {
   padding-top: 20px;
   margin: -5px;
+}
+
+.padding-left-right {
+  padding-left: 60px;
+  padding-right: 60px;
 }
