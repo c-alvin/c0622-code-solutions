@@ -8,12 +8,8 @@
   display: flex;
 }
 
-.column-fifth {
-  flex-basis: 20%;
-}
-
-.column-fourth-fifth {
-  flex-basis: 80%;
+.column-fourth {
+  flex-basis: 25%;
 }
 
 .column-half {
@@ -74,6 +70,10 @@
   padding-top: 50px;
 }
 
+.justfy-center {
+  justify-content: center;
+}
+
 .text-center {
   text-align: center;
 }
@@ -82,7 +82,7 @@ hr {
   border-top: 1px solid #f6f7f8;
 }
 
-.background-grey {
+.background-yellow {
   background-color: #fafafa;
 }
 
@@ -129,4 +129,122 @@ hr {
 
 .paddingtop25 {
   padding-top: 25px;
+}
+
+.text-darkgray {
+  color: #6e6e6e;
+}
+
+.paddingbot5 {
+  padding: 5px;
+}
+
+.negmargin5 {
+  margin: -5px;
+}
+
+.margin2 {
+  margin: 2px;
+}
+
+.paddingall25 {
+  padding: 25px;
+}
+
+.justify-idk {
+  justify-content: flex-start;
+}
+
+.marginright25 {
+  margin-right: 25px;
+}
+
+.marginleft25 {
+  margin-left: 25px;
+}
+
+.heroimg {
+  background-image: url("images/hero.jpg");
+  background-size: cover;
+  object-fit: fill;
+  width: 700px;
+  height: 375px;
+  position: relative;
+}
+
+.overlay {
+  background: linear-gradient(rgb(100 100 100 / 50%), rgb(100 100 100 / 50%));
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.infographic {
+  position: absolute;
+  color: #fff;
+  top: 125px;
+  left: 50px;
+}
+
+.color-lightwhite {
+  color: #f7f7f7;
+}
+
+.infographicheader {
+  color: #fff;
+  position: absolute;
+  left: 50px;
+  top: 40px;
+  font-size: 24px;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.column-60 {
+  flex-basis: 60%;
+}
+
+.absolutecontainer {
+  width: 380px;
+  height: 400px;
+  position: absolute;
+}
+
+.absolutelargebluebutton {
+  width: 125px;
+  height: 35px;
+  background-color: #294363;
+  color: #e4e8ec;
+  border-radius: 0.3rem;
+  position: absolute;
+  left: 50px;
+  bottom: 80px;
+  text-align: center;
+  padding: 10px;
+}
+
+.white-border {
+  border: 40px solid white;
+}
+
+.background-gray {
+  background-color: #525351;
+}
+
+.text-white {
+  color: white;
+}
+
+.paddingall40 {
+  padding: 40px;
+}
+
+.bottom-border {
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.paddingbot25 {
+  padding-bottom: 25px;
 }
