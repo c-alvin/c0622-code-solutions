@@ -70,7 +70,7 @@
   padding-top: 50px;
 }
 
-.justfy-center {
+.justify-center {
   justify-content: center;
 }
 
@@ -168,7 +168,7 @@ hr {
   background-size: cover;
   object-fit: fill;
   width: 700px;
-  height: 375px;
+  height: 350px;
   position: relative;
 }
 
@@ -207,7 +207,7 @@ hr {
 }
 
 .absolutecontainer {
-  width: 380px;
+  width: 375px;
   height: 400px;
   position: absolute;
 }
@@ -220,7 +220,7 @@ hr {
   border-radius: 0.3rem;
   position: absolute;
   left: 50px;
-  bottom: 80px;
+  bottom: 100px;
   text-align: center;
   padding: 10px;
 }
@@ -247,4 +247,12 @@ hr {
 
 .paddingbot25 {
   padding-bottom: 25px;
+}
+
+.marginbottom20 {
+  margin-bottom: 20px;
+}
+
+.rowheight300 {
+  height: 300px;
 }
