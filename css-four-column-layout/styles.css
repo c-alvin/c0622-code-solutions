@@ -1,0 +1,66 @@
+.container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-fourth {
+  flex-basis: 25%;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.img1 {
+  height: 400px;
+  width: 250px;
+}
+
+.img2 {
+  height: 50px;
+  width: 50px;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.background-gray {
+  background-color: #f7f8fa;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.column-full {
+  flex-basis: 100%;
+}
+
+.barlowfont18 {
+  font-family: Barlow, sans-serif;
+  font-size: 18px;
+}
+
+.barlowfont14 {
+  font-family: Barlow, sans-serif;
+  font-size: 14px;
+}
+
+.barlowfont12 {
+  font-family: Barlow, sans-serif;
+  font-size: 12px;
+}
+
+.fontweight {
+  font-weight: 700;
+}
