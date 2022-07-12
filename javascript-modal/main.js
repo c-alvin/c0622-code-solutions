@@ -1,16 +1,16 @@
-var clicks = true;
+var ModalOn = false;
 
-var $ChangeContent = document.querySelector('.display-content');
+var $ChangeContent = document.querySelector('.display-none');
 var $ClickButton = document.querySelector('.button1');
 var $ClickButton2 = document.querySelector('.button2');
 
 function changeDisplay(event) {
-  if (clicks === true) {
-    $ChangeContent.className = 'display-none';
-    clicks = false;
-  } else if (clicks === false) {
+  if (ModalOn === false) {
     $ChangeContent.className = 'display-content';
-    clicks = true;
+    ModalOn = true;
+  } else if (ModalOn === true) {
+    $ChangeContent.className = 'display-none';
+    ModalOn = false;
   }
 
 }
