@@ -31,7 +31,6 @@
   padding: 10px;
   font-size: 1rem;
   text-align: center;
-  top: 38%;
   color: white;
   border: none;
 }
@@ -85,6 +84,9 @@
 }
 
 .textheader {
-  top: 28%;
   font-size: 24px;
+}
+
+.flex-direction-column {
+  flex-direction: column;
 }

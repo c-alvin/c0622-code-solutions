@@ -1,19 +1,19 @@
 var ModalOn = false;
 
-var $ChangeContent = document.querySelector('.display-none');
-var $ClickButton = document.querySelector('.button1');
-var $ClickButton2 = document.querySelector('.button2');
+var $changeContent = document.querySelector('.display-none');
+var $clickButton = document.querySelector('.button1');
+var $clickButton2 = document.querySelector('.button2');
 
 function changeDisplay(event) {
   if (ModalOn === false) {
-    $ChangeContent.className = 'display-content';
+    $changeContent.className = 'display-content';
     ModalOn = true;
   } else if (ModalOn === true) {
-    $ChangeContent.className = 'display-none';
+    $changeContent.className = 'display-none';
     ModalOn = false;
   }
 
 }
 
-$ClickButton.addEventListener('click', changeDisplay);
-$ClickButton2.addEventListener('click', changeDisplay);
+$clickButton.addEventListener('click', changeDisplay);
+$clickButton2.addEventListener('click', changeDisplay);
