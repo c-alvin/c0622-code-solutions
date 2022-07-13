@@ -1,13 +1,3 @@
-
-// function trackKey(event) {
-//   for (var i = 0; i < $AllSpan.length; i++) {
-//     if (event.key === $AllSpan[i].textContent) {
-//       $AllSpan[i].className = 'greentext text-underline';
-//     } else if (event.key !== $AllSpan[i].textContent) {
-//       $AllSpan[i].className = 'redtext';
-//     }
-//   }
-// }
 var $AllSpan = document.querySelectorAll('span');
 var counter = 0;
 
@@ -21,3 +11,10 @@ function trackKey(event) {
   }
 }
 document.addEventListener('keydown', trackKey);
+
+// goal: when user has finished typing the phrase, return accuracy
+// if $AllSpan[count] === $AllSpan.length - 1, it has reached the last
+// item in the nodelist. accuracy would be inputs correct / total inputs.
+// create a total keydown counter, create a keydown counter for correct
+// and incorect keydowns.  correct inputs / correct + incorrect inputs
+// = accuracy. add that variable as text content with a string.
