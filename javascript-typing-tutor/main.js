@@ -12,11 +12,11 @@ var $AllSpan = document.querySelectorAll('span');
 var counter = 0;
 
 function trackKey(event) {
-  if ($AllSpan[counter].textContent === event.key) {
+  if (event.key === $AllSpan[counter].textContent) {
     $AllSpan[counter].className = 'greentext';
     $AllSpan[counter + 1].className = 'text-underline';
     counter++;
-  } else if ($AllSpan[counter] !== event.key) {
+  } else if (event.key !== $AllSpan[counter].textContent) {
     $AllSpan[counter].className = 'redtext text-underline';
   }
 }
