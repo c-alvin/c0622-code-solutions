@@ -1,0 +1,43 @@
+.container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  flex-basis: 100%;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.height1000 {
+  height: 800px;
+}
+
+.greentext {
+  color: #2fd02d;
+}
+
+.redtext {
+  color: red;
+}
+
+.text-underline {
+  text-decoration: underline 4px;
+  text-underline-offset: 0.75rem;
+}
+
+.fontstyleroboto {
+  font-family: "Roboto Mono", cursive;
+  font-size: 18px;
+}
