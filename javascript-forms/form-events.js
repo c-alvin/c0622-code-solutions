@@ -15,7 +15,7 @@ function handleInput(event) {
 
 var $inputOne = document.querySelector('input');
 console.log($inputOne);
-var $inputTwo = document.forms[0].elements[1];
+var $inputTwo = document.querySelector('input:nth-of-type(2)');
 console.log($inputTwo);
 
 var $textArea = document.querySelector('textarea');
