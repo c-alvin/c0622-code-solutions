@@ -2,10 +2,10 @@
 // goal: return a new object containing all the proprties of source
 // not listed in keys
 // create an empty object
-// loop through array
-// set variable of array to = array[i]
-// if (source[variable] != undefined)
-// source[variable] = object[variable];
+// copy the given object into the new object, to not cause reference issues.
+// create a for in loop with a nested for loop
+//  if the resulet[key] === source[keys[i]], then remove that from the new object.
+// return result.
 
 function omit(source, keys) {
   var result = {};
@@ -22,6 +22,7 @@ function omit(source, keys) {
   return result;
 }
 
+// side notes:
 // var test = Object.assign({}, source);
 // test.alvin = 3;
 // console.log('alvin' in test);
