@@ -1,7 +1,8 @@
 /* exported isPalindromic */
 // goal: A Boolean indicating whether or not string is a palindrome.
-// double for loop, going inside to check if starting
-// index is equal to end of index
+// check if first value and last value are equal if not , not a palindrome
+// else add the values of newstring at index to empty string
+// if empty string == new string palindrome.
 
 function isPalindromic(string) {
   var newString = string.replace(' ', '');
