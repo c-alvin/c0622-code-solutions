@@ -4,4 +4,4 @@ function changeTime() {
   $h1.textContent = 'Hello There';
 }
 
-$h1.addEventListener('DOMContentLoaded', setTimeout(changeTime, 1000));
+$h1.addEventListener(setTimeout(changeTime, 1000));
