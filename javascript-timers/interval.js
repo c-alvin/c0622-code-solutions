@@ -8,4 +8,4 @@ function countdown(event) {
   }
 }
 
-$h1.addEventListener(setInterval(countdown, 1000));
+setInterval(countdown, 1000);
