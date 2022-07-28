@@ -2,7 +2,13 @@
 // goal: A new Array containing the symmetric difference between first and
 //  second. That is, elements are included if they are found in one Array,
 // but not the other. The result values are unqiue and their order is
-// determined by the order they occur.
+// determined by the order they occur
+// create empty hash and array
+// if value is undefined delete that key value pair
+// if not set that value pair to the value at index
+// create another for loop, if the value at key is not undefined
+// push that value into the array
+// return array
 
 function difference(first, second) {
   var differenceHash = {};

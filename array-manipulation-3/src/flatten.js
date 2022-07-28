@@ -1,5 +1,10 @@
 /* exported flatten */
 // goal: A new Array with any direct child Arrays unwrapped. This function should only "flatten" array by one level.
+// loop through array and check if value is an array
+// if array, make a variable for the words in the smaller array
+// push those values into the new array
+// else push the other values into the array as normal
+// return new array
 
 function flatten(array) {
   var newArray = [];
