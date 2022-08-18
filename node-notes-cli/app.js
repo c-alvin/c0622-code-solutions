@@ -20,11 +20,7 @@ if (process.argv[2] === 'create') {
 
 if (process.argv[2] === 'delete') {
   const notes = dataTest.notes;
-  for (const prop in notes) {
-    if (process.argv[3] === prop) {
-      delete notes[prop];
-    }
-  }
+  delete notes[process.argv[3]];
   const newData = JSON.stringify(dataTest, null, 2);
   fs.writeFile('./data.json', newData, err => {
     if (err) throw err;
@@ -33,11 +29,7 @@ if (process.argv[2] === 'delete') {
 
 if (process.argv[2] === 'update') {
   const notes = dataTest.notes;
-  for (const prop in notes) {
-    if (process.argv[3] === prop) {
-      notes[prop] = process.argv[4];
-    }
-  }
+  notes[process.argv[3]] = process.argv[4];
   const newData = JSON.stringify(dataTest, null, 2);
   fs.writeFile('./data.json', newData, err => {
     if (err) throw err;
