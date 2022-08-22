@@ -23,7 +23,7 @@ app.listen(3000, () => {
 app.get('/api/notes/:id', (req, res) => {
   const notes = data.notes;
   const number = Number(req.params.id);
-  if (number <= 0 || !Number.isInteger(number) || number === 'NaN') {
+  if (number <= 0 || !Number.isInteger(number) || isNaN(number)) {
     res.status(400).send({
       error: 'id must be a postiive integer'
     });
@@ -69,7 +69,7 @@ app.post('/api/notes', (req, res) => {
 app.delete('/api/notes/:id', (req, res) => {
   const number = Number(req.params.id);
   const notes = data.notes;
-  if (number <= 0 || !Number.isInteger(number) || number === 'NaN') {
+  if (number <= 0 || !Number.isInteger(number) || isNaN(number)) {
     res.status(400).send({
       error: 'id must be a postiive integer'
     });
@@ -97,7 +97,7 @@ app.put('/api/notes/:id', (req, res) => {
   const number = Number(req.params.id);
   const notes = data.notes;
   const postObject = req.body.content;
-  if (number <= 0 || !Number.isInteger(number) || number === 'NaN') {
+  if (number <= 0 || !Number.isInteger(number) || isNaN(number)) {
     res.status(400).send({
       error: 'id must be a postiive integer'
     });
