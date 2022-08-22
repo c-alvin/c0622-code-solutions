@@ -1,5 +1,5 @@
 {
-  "nextId": 20,
+  "nextId": 23,
   "notes": {
     "12": {
       "content": "The event loop, this, closures, and prototypal inheritance are special about JavaScrip.",
@@ -17,8 +17,17 @@
       "content": "Inertia is a property of matter.",
       "Id": 17
     },
-    "content": {
-      "content": "The event loop, this, closures, and prototypal inheritance are special about JavaScrip."
+    "20": {
+      "content": "Inertia is a property of matter.",
+      "Id": 20
+    },
+    "21": {
+      "content": "Inertia is a property of matter.",
+      "Id": 21
+    },
+    "22": {
+      "content": "Inertia is a property of matter.",
+      "Id": 22
     }
   }
 }
