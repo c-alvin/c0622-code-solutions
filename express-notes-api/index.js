@@ -27,11 +27,13 @@ app.get('/api/notes/:id', (req, res) => {
     res.status(400).send({
       error: 'id must be a postiive integer'
     });
+    return;
   }
   if (notes[number] === undefined) {
     res.status(404).json({
       error: 'no note with the specified id'
     });
+    return;
   }
   if (notes[number] !== undefined) {
     res.status(200).json(notes[number]);
@@ -47,11 +49,12 @@ app.post('/api/notes', (req, res) => {
     res.status(400).json({
       error: 'content is a required field'
     });
+    return;
   }
   if (postObject) {
     const test = req.body;
     test.Id = data.nextId;
-    notes[data.nextId] = Object;
+    notes[data.nextId] = test;
     data.nextId++;
     const newData = JSON.stringify(data, null, 2);
     fs.writeFile('./data.json', newData, err => {
@@ -73,11 +76,13 @@ app.delete('/api/notes/:id', (req, res) => {
     res.status(400).send({
       error: 'id must be a postiive integer'
     });
+    return;
   }
   if (notes[number] === undefined) {
     res.status(404).json({
       error: 'no note with the specified id'
     });
+    return;
   }
   if (notes[number] !== undefined) {
     delete notes[number];
@@ -101,16 +106,19 @@ app.put('/api/notes/:id', (req, res) => {
     res.status(400).send({
       error: 'id must be a postiive integer'
     });
+    return;
   }
   if (!postObject) {
     res.status(400).send({
       error: 'content is a required field'
     });
+    return;
   }
   if (notes[number] === undefined) {
     res.status(404).json({
       error: 'no note with the specified id'
     });
+    return;
   }
   if (notes[number] !== undefined && postObject) {
     notes[number].content = postObject;
