@@ -87,7 +87,7 @@ app.delete('/api/notes/:id', (req, res) => {
   if (notes[number] !== undefined) {
     delete notes[number];
     const newData = JSON.stringify(data, null, 2);
-    fs.writeFile('derp/data.json', newData, err => {
+    fs.writeFile('./data.json', newData, err => {
       JSON.error = 'An unexpected error occurred.';
       if (!err) {
         res.sendStatus(204);
