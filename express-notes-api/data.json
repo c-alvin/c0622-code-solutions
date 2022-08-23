@@ -1,5 +1,5 @@
 {
-  "nextId": 27,
+  "nextId": 28,
   "notes": {
     "12": {
       "content": "The event loop, this, closures, and prototypal inheritance are special about JavaScrip.",
@@ -33,9 +33,9 @@
       "content": "test test 123",
       "Id": 23
     },
-    "26": {
-      "content": "i think there is a note here",
-      "Id": 26
+    "27": {
+      "content": "yay",
+      "Id": 27
     }
   }
 }

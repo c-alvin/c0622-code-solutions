@@ -57,11 +57,11 @@ app.post('/api/notes', (req, res) => {
     notes[data.nextId] = test;
     const newData = JSON.stringify(data, null, 2);
     fs.writeFile('./data.json', newData, err => {
-      JSON.error = 'An unexpected error occurred.';
       if (!err) {
         res.status(201).send(test);
       } else {
-        res.status(500).send((JSON.error));
+        console.error(err);
+        res.status(500).send(err.message);
       }
     });
     data.nextId++;
@@ -88,11 +88,11 @@ app.delete('/api/notes/:id', (req, res) => {
     delete notes[number];
     const newData = JSON.stringify(data, null, 2);
     fs.writeFile('./data.json', newData, err => {
-      JSON.error = 'An unexpected error occurred.';
       if (!err) {
         res.sendStatus(204);
       } else {
-        res.status(500).send((JSON.error));
+        console.error(err);
+        res.status(500).send(err.message);
       }
     });
   }
@@ -124,11 +124,11 @@ app.put('/api/notes/:id', (req, res) => {
     notes[number].content = postObject;
     const newData = JSON.stringify(data, null, 2);
     fs.writeFile('./data.json', newData, err => {
-      JSON.error = 'An unexpected error occurred.';
       if (!err) {
         res.status(200).send(notes[number]);
       } else {
-        res.status(500).send((JSON.error));
+        console.error(err);
+        res.status(500).send(err.message);
       }
     });
   }
