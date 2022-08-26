@@ -125,7 +125,7 @@ app.put('/api/grades/:gradeId', (req, res) => {
 
 app.delete('/api/grades/:gradeId', (req, res) => {
   const gradeId = Number(req.params.gradeId);
-  if (gradeId <= 0 || gradeId === undefined || isNaN(gradeId)) {
+  if (gradeId <= 0 || gradeId === undefined || isNaN(gradeId || !Number.isInteger(gradeId))) {
     res.status(400).json({
       error: 'must enter valid id'
     });
