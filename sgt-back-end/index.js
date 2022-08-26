@@ -26,13 +26,7 @@ app.get('/api/grades', (req, res, next) => {
   db.query(sql)
     .then(result => {
       const grades = result.rows;
-      if (!grades) {
-        res.status(404).json({
-          error: 'Cannot find grades'
-        });
-      } else {
-        res.json(grades);
-      }
+      res.status(200).json(grades);
     })
     .catch(err => {
       console.error(err);
