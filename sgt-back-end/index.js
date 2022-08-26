@@ -53,7 +53,7 @@ app.post('/api/grades', (req, res) => {
   const course = bodyObject.course;
   const score = bodyObject.score;
 
-  if (!name || !course || !score || !Number.isInteger(score) || score <= 0 || score > 100) {
+  if (!name || !course || score === undefined || !Number.isInteger(score) || score < 0 || score > 100) {
     res.status(400).json({
       error: 'must enter valid name, course, and score'
     });
@@ -88,7 +88,7 @@ app.put('/api/grades/:gradeId', (req, res) => {
   const name = bodyObject.name;
   const course = bodyObject.course;
   const score = bodyObject.score;
-  if (!name || !course || !score || !Number.isInteger(score) || score <= 0 || score > 100 || gradeId <= 0) {
+  if (!name || !course || score === undefined || !Number.isInteger(score) || score < 0 || score > 100 || gradeId <= 0) {
     res.status(400).json({
       error: 'must enter valid name, course, score, and gradeId'
     });
