@@ -82,7 +82,7 @@ app.put('/api/grades/:gradeId', (req, res) => {
   const name = bodyObject.name;
   const course = bodyObject.course;
   const score = bodyObject.score;
-  if (!name || !course || score === undefined || !Number.isInteger(score) || score < 0 || score > 100 || gradeId <= 0) {
+  if (!name || !course || score === undefined || !Number.isInteger(score) || score < 0 || score > 100 || gradeId <= 0 || !Number.isInteger(gradeId)) {
     res.status(400).json({
       error: 'must enter valid name, course, score, and gradeId'
     });
