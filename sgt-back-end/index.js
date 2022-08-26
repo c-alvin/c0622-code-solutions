@@ -54,7 +54,9 @@ app.post('/api/grades', (req, res) => {
   const score = bodyObject.score;
 
   if (!name || !course || !score || !Number.isInteger(score) || score < 0 || score > 100) {
-    res.sendStatus(400);
+    res.status(400).json({
+      error: 'must enter valid name, course, and score'
+    });
     return;
   }
 
@@ -86,8 +88,10 @@ app.put('/api/grades/:gradeId', (req, res) => {
   const name = bodyObject.name;
   const course = bodyObject.course;
   const score = bodyObject.score;
-  if (!name || !course || !score || !Number.isInteger(score) || score < 0 || score > 100 || gradeId < 0) {
-    res.sendStatus(400);
+  if (!name || !course || !score || !Number.isInteger(score) || score < 0 || score > 100 || gradeId <= 0) {
+    res.status(400).json({
+      error: 'must enter valid name, course, score, and gradeId'
+    });
     return;
   }
   const sql = `
@@ -143,7 +147,7 @@ app.delete('/api/grades/:gradeId', (req, res) => {
         error: 'Cannot find grade'
       });
     } else {
-      res.status(204).json(newGrade);
+      res.status(204);
     }
   }).catch(err => {
     console.error(err);
