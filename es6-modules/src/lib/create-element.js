@@ -14,4 +14,4 @@ function createElement(tagName, attributes, children = []) {
   return parent;
 }
 
-module.exports = createElement;
+export default createElement;
