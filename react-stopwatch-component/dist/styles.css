@@ -17,12 +17,7 @@
   width: 210px;
 }
 
-.play-button {
-  margin-top: 2rem;
-  font-size: 2rem;
-}
-
-.pause-button {
+.button {
   margin-top: 2rem;
   font-size: 2rem;
 }

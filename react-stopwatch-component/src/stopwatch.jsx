@@ -36,8 +36,10 @@ export default class Stopwatch extends React.Component {
   }
 
   render() {
-    if (this.state.isClicked) {
-      return (
+    const iconClass = this.state.isClicked
+      ? 'fa-pause'
+      : 'fa-play';
+    return (
     <div>
       <div className="circle" onClick={this.handleClickFace}>
         <div>
@@ -45,23 +47,9 @@ export default class Stopwatch extends React.Component {
         </div>
       </div>
       <div className='text-center width-circle'>
-            <i onClick={this.handleClick} className="fa-solid fa-pause pause-button"></i>
+            <i onClick={this.handleClick} className={`fa-solid button ${iconClass}`}></i>
       </div>
     </div>
-      );
-    } else {
-      return (
-        <div>
-          <div className="circle" onClick={this.handleClickFace}>
-            <div>
-              {this.state.timer}
-            </div>
-          </div>
-          <div className='text-center width-circle'>
-            <i onClick={this.handleClick} className="fa-solid fa-play play-button"></i>
-          </div>
-        </div>
-      );
-    }
+    );
   }
 }
