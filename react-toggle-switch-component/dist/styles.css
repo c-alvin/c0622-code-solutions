@@ -1,0 +1,40 @@
+.switch-on {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background-color: green;
+  border-radius: 20px;
+  border: 2px solid black;
+}
+
+.circle {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  left: 30px;
+  bottom: 1px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid black;
+}
+
+.switch-off {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background-color: gray;
+  border-radius: 20px;
+  border: 2px solid black;
+}
+
+.circle-off {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  bottom: 1px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid black;
+}
