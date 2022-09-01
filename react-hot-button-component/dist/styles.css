@@ -1,0 +1,35 @@
+.purple-button {
+  background-color: #351c74;
+  color: white;
+  padding: 7px;
+}
+
+.light-purple-button {
+  background-color: #674ea7;
+  color: white;
+  padding: 7px;
+}
+
+.red-button {
+  background-color: #e06666;
+  color: white;
+  padding: 7px;
+}
+
+.orange-button {
+  background-color: #f6b26b;
+  color: black;
+  padding: 7px;
+}
+
+.yellow-button {
+  background-color: #ff0;
+  color: black;
+  padding: 7px;
+}
+
+.white-button {
+  background-color: white;
+  color: black;
+  padding: 7px;
+}
