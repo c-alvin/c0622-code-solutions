@@ -1,0 +1,24 @@
+.display-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.width {
+  width: 10rem;
+}
+
+.border {
+  border: 2px solid black;
+}
+
+.margin-left {
+  margin-left: 1rem;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
