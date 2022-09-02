@@ -24,11 +24,11 @@ export default class Accordion extends React.Component {
   render() {
     const listItems =
     this.props.topics.map((topic, index) => {
-      const revealed = this.state.isOpen === topic.name
+      const revealed = this.state.isOpen === index.toString()
         ? 'show'
         : 'hidden';
       return (
-         <li onClick={this.handleClick} data-topic={topic.name} key={index}>{topic.name}
+         <li onClick={this.handleClick} data-topic={index} key={index}>{topic.name}
             <div className={revealed}>{topic.description}</div>
          </li>
       );
