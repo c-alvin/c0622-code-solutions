@@ -3,9 +3,9 @@ const path = require('path');
 
 const app = express();
 
-const absolute = path.join('__dirname', ('public'));
-console.log(absolute);
-const serve = express.static('public');
+const absolute = path.join(__dirname, ('public'));
+
+const serve = express.static(absolute);
 
 app.use(serve);
 
