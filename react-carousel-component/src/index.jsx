@@ -4,13 +4,13 @@ import Carousel from './carousel';
 
 const images = [
   {
-    link: 'https://static.wikia.nocookie.net/terminalmontage/images/c/c0/Kirbo.png/revision/latest?cb=20200609234320'
+    link: 'https://art.pixilart.com/thumb/a46ad68784aae5e.png'
   },
   {
-    link: 'https://static.wikia.nocookie.net/terminalmontage/images/7/74/Melee_Fox_TM.png/revision/latest/top-crop/width/360/height/360?cb=20200617045035'
+    link: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB66mMfXcl7zUvfgf1JfWFL7IyQwRyxJHzfbjPyEAU501hwmhfmTb13eSYdfatyAr5qXs&usqp=CAU'
   },
   {
-    link: 'https://static.wikia.nocookie.net/terminalmontage/images/e/ec/Luigi_TM_Edit_Cut.png/revision/latest/top-crop/width/360/height/360?cb=20200724034944'
+    link: 'https://www.vhv.rs/dpng/d/163-1631002_terminalmontage-luigi-hd-png-download.png'
   }
 ];
 const container = document.querySelector('#root');
