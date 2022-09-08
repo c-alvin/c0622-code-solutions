@@ -1,0 +1,237 @@
+User can sign up.
+browser sends a request to the server for an html document.  html gets loaded in the browser
+eventually serves main.js with all our components with webpack.
+
+index.jsx runs
+react is included in the bundle
+reactdom is included in the bundle
+import App is included in the bundle.
+a container is made at the div with the id root
+a react root is created from the supplied container
+we then tell our app to run by mounting the app to the root div
+
+app is going to be called with the new operator which calls its constructor method ONE time.
+this calls super(props) and establishes the initial state
+with properties user being null, isauthorizing is true,
+and route: being the return of the parseRoute function which returns the path and params
+
+then the render method runs one time,
+it first checks through a conditional if the isauthorizing property of this.state is truthy.
+since the original value is true, it will then return null to the page.
+
+after the first render, the componentdidmount did mount method runs.
+ In the componenet did mount method, there is a
+window event listener for the event of a hashchange.  So if the hash Changes,
+it will then reparse the route and set it to the route property which will rerender the page in
+the future.  Then the return of the getItem method of the localstorage property of the window object is assigned
+to the variable token, and the variable user will be assigned either a value of the return
+of the function jwtDecode(token) or null again if the ternary operator results to falsy.
+this .setState is called here
+to set the values of user to user and is authorizing to false.  Since setstate is called, this re-renders
+the page.
+
+the render method is called again and again the conditional is checked to see if the isauthorizing
+peroperty is truthy.  it is now false, so it will not return null this time.
+
+the render method returns a react fragment with a navbar.
+This starts the lifecycle of the NavBar component.
+navbar is going to be called which calls the new operator and then calls the render method.
+this returns a navbar with an awesomeapp logo and two buttons for sign in and sign up.
+
+app then renders a page container which calls the renderPage method.
+since the state hasn't been changed yet, the route path originally for this app is sign-in
+Since path is strictly equal to sign-in it will  now return our react element Auth.
+This starts our lifecycle for Auth.  The render method is then immediately called
+which returns the various react type elements which display a logo, a welecome message,
+and eventually an authform using our auth-form component.
+
+this starts our life-cycle for the auth-form.
+authform is going to be called which calls the new operator which calls its constructor method.
+this calls super(props) and sets the state for username property and password property as empty strings.
+it then calls the render method which essnetially returns a form with inputs for username,password
+and also a button for register now or to log in.  the username and password inputs are obviously
+empty as the original values are empty strings.  the buttons due to the path being equal to sign-in
+are showing the register button.
+
+since there is now an event listener for haschange due to component did mount
+ So now if the hash Changes, which in this case it changes to sign-up on click of
+ either the anchor tag on the authform
+or the anchors that look like buttons in the navbar.
+the component will reparse the new hash and update its state using setState.
+
+setState then rerenders the page, which will now call the render function.
+the render function again.
+
+This starts the lifecycle of the navbar component.  Navbar is going to be called with the
+new operator and then the render method will run.  This returns a navbar.
+
+It then renders the page container which calls the renderPage Method.
+ Since the new path is now strictly equal to sign-up,
+the react element auth is returned.
+
+This starts the lifecycle for auth.  Authpage is called with the new operator.  the properties
+user, route and handleSignIn are destructured from context property of this object and assigned
+to the variables user, route and handleSignIn. there is a conditional statement which checks to see
+if the value of user is truthy.  If it is, it returns the react element redirect using our redirect component.
+since the value of user is still null, the condition is falsy so the render method is called.  since the route.path is now sign up and not sign in, the welcome
+message is now create an account to get started.
+it then calls the render method and returns react elements which display the logo, the
+appropriate welcome message and an authform using our authform component.
+
+this starts the lifecycle of the auth-form component.  Authform is called with
+the new operator.  Then the constructor method is called, which sets the initial state of
+the properties of username and password to empty strings.  then, the render method is called,
+since action is now equal to sign-up the values of the variables have changed to truthy values
+of the ternary operators.  The render method is called which returns a form with inputs
+for username, password.  it also has a sign in instead anchor and register button.
+
+as a user types into the inputs for password and key, the onchange event calls the handlechange method
+which calls this.setState and reassigns new values to the event.target.value and event.target.name
+respectively.  this rerenders the page each time onChange.  Once the user submits
+the sign in data for password and user, the onSubmit listener on the form calls the handlesubmit method.
+Handlesubmit prevents the default action of the event and calls the fetch function which makes a post request to our server at api/auth/${action},
+action being the value of the route.path that was passed down as the prop action.
+
+Now we enter the proper callback that matches the post request.  in the callback function,
+username and password properties are destructured from the body property of the req object.
+The username and password are checked to see if they exist and if either do not exist the server throws an error.
+Otherwise, the hashmethod of the argon2 object is called with the value of the variable password.
+And then the then method of the return of the previous hash method is called with with an anonymous arrow function
+with the parameter of the now hashedPassword.  In the arrow function we create a sequel string that inserts
+into the users table a username value and hashedPassword value, and then returns the corresponding
+userId, username, and createdAt attributes.
+
+our server sends a query to our database with the arguements sql, and params and the database replies to the server
+with the data.  the then method of the return of the previous then method is now called with one arguement,
+anonymous arrow function with the parameter being the result or the data that was given to use by the server.
+the first element of the array is being destructured from the rows.property of the result object and assigned to the
+const variable user.  Our server now sends back a status of 201 and the user variable converted to a json string.
+
+Since we now have that data the .then method of return of the previous fetch function is called which parses the json
+string into a javascript object.  The then method of the return of the previous then method is called with an anonymous arrow function
+with 1 parameter result or the parsed javascript object.  In the function there is a conditional to see whether
+action is strictly equal to sign-up, in this case it is so window.location.hash='sign-in'.  This triggers the
+hashChange event which rerenders the page.
+
+Sign In
+
+Since we have created our account previously and the page was rerendered back due to setState.  the render method
+ checked to see if conditional for isauthorizing was truthy, since the value is still false after componentdidmount method was called,
+it does not return null.  It returns the react fragment with the react element navbar which is created by our
+component navbar.
+
+our navbar lifecycle starts.  the navbar class is called with the new operator and the render method is
+immediately called after that.  it returns a navbar with the awesome app logo and since the user is = null,
+the sign-in and signup anchors are still present.
+
+then our app renders the page container which calls the renderPage method again.  the renderPage method
+through a conditional checks to see what the path.route is and since it is sign-in it returns the auth react
+element which is created by our auth page component.
+
+The auth components lifecycle starts and the authpage class is called using the new operator.  the user is still null,
+in this case so it does not redirect.  The render method returns react elements that display the awesome app logo,
+the appropriate welcome message an authform element using our authform component.
+
+(refer back to line 79-91)
+
+now we enter the callback method that matches api/auth/sign-in.  the username property and password property
+are destructured from the body property of req object.  if either username or password do not exist, it throws a client
+error of an invalid log in.  in the arrow function we create a sequel string, that selects the userid, and hashedPassword
+attributes from the users table where the username is equal to the param username.  our server then sends
+a query to the database with the arguements of the sql string and the variable params.  The then method
+of the return of the previous query method is called with 1 arguement the anonymous arrow function with 1 parameter results.
+The first item in the array is destructured from the rows property of the results object and assigned to the variable user.
+There is a conditional in the code block to check if the user exists, if it doesn't it tthrows a 401 error.  Otherwise
+it returns the verify method method of argon2 object being called with two arguements the variable hashed password and the
+original password.  the then method of the return of previous verify method is called with 1 arguement
+the anonymous arrow function with 1 parameter isMatching.  inside the arrow function code block, if the passwords
+do not match, it returns a 401 error otherwise it creates a payload of an object with the value and properties respectively
+of userId and username.  the sign method of the jwt object is called with two arguements payload, and the tokensecret
+property of the env property of the process object.  the server then sends back an object with the properties token, and user with
+the value of the variable payload as a json string.
+
+The data is received and parsed into a json object through the then method of the return of the previous fetch function.
+Now the the then method of the return of the previous then method is called with 1 arguement an anonymous arrow function with
+1 parameter result.  inside the arrow function there is a conditional to check if the action is strictly equal to sign up.
+it is not, so it checks if result.user && result.token are truthy values, which they are as they were received from the
+server.   this calls the onSignIn method of the props property of the this object which was passed down with 1 arguement, the
+variable result.
+
+the handleSignIn method destructures the user and token properties of the result object and assigns them to the variables
+user and token.  the setItem method of the localstorage property of the window object is called with two arguements.
+The name 'react-context-jwt', and the variable token.  the setState method is called which sets the user property to the value
+of user.
+
+setState then rerenders the page, which will now call the render function.
+the render function renders the Navbar with by calling the navbar class using the new operator.
+this time the navbar will have the signout button as user does not equal to null.
+the render function then renders the page container element which calls the renderpagemethod.
+The renderpage method returns the auth element using the auth component as the routh.path is still equal to 'sign-in'
+
+the class authpage is called using the new operator, which then calls the render method immediately after.
+the conditional to see the value of (user) is truthy is checked.  this time the user value is truthy,
+so it returns the react element redirect using the redirect component.
+
+the function redirect is called with 1 arguement props.  the url function is being called using the new operator
+with 1 arguement window.location which is then assigned to const url.  in the function there is a conditional
+to see if props.to = ''.  In this case the to prop that was passed down was indeed "".  the function then replaces
+the window location with the new url which has a new hash.
+
+this calls the event listener for hashChange which calls the setstate method which changes the route to the parsed
+hash value of '#'.  Through the parse-route function, if the route starts with a hash, it replaces the hash with ''.
+setState then triggers the rerendering of the page.
+
+refer back to lines 164-167
+
+the renderpage method is called.  the conditional where path stricly equal '' evalutes to true.
+the home react element is returned using the home component.
+the home life cycle starts.
+the home class function is called using the new operator followed by the render function.
+the render method checks to see if this.context.user is falsy, it is not in this case.
+As a result the render method returns a div with an iframe containing a giph.
+
+User can stay signed in (even if they refresh the page).
+
+If the user refreshes the page and we were previously signed in, during the handleSign in method call(refer to line 160)
+the method stored the token in localstorage using the setItem method of the localstorage property
+of the window object.  since the page we refreshed it starts back from the beginning (refer to lines 1-28).
+
+This time, using the getItem method of the localstorage property of window object, we can retrieve the stored token
+and assign it to the variable token.  user will also not be null as the jwtDecode function will be called with 1 arguement
+the value of the variable token.
+
+this.setState is called and the values of the property of user is set to user and is authorizing to false.
+setState rerenders the page again.
+refer back to lines (165-182)
+
+user can sign out
+
+if we are signed in the navbar at the top will have a button with an onCLick handler of handleSignout.
+This calls the handleSignout method which removes the currently stored token that was stored (refer to line 160)
+after the token is removed storage, this.setState is called and the user property is set to null.
+setState rerenders the page.  the render method is called and checks the conditional again to see if
+isauthorizing is truthy.  it is false still so the render method returns the navbar first.
+
+This starts the lifecycle of the NavBar component.
+navbar is going to be called which calls the new operator and then calls the render method.
+this returns a navbar with an awesomeapp logo and two buttons for sign in and sign up as the value of the
+user is now null again.
+
+the render method renders the container which calls the renderpage method.  the path is still '' so
+home is returned using the react component home.  the class home is called using the new operator, followed
+by the render method.
+
+Now it checks to see if (!this.context.user) is truthy and it is as the user is now null.  This
+returns the react element Redirect using the react component Redirect which also passes a to prop of the value of
+"sign-in"
+
+the function redirect is called with 1 arguement props.  it calls the url function using the new operator with 1 arguement
+window.location and assigns it to the variable URL.  It checks the conditional to see whether props.to is = '', it does not
+as props.to is = "sign-in".  As a result, props.to or "sign-in" is assigned to url.hash.
+
+the replace method of the location property of the window object is called with 1 arguement the variable url and then null is returned.
+Calling this replace method changes the url which changes the hash value to "sign-in".  this triggers the hashChange
+event which calls the setState method and assigns a new value to route property.
+
+setState() rerenders the page.
+refer to lines (36-54)
