@@ -194,7 +194,7 @@ User can stay signed in (even if they refresh the page).
 
 If the user refreshes the page and we were previously signed in, during the handleSign in method call(refer to line 160)
 the method stored the token in localstorage using the setItem method of the localstorage property
-of the window object.  since the page we refreshed it starts back from the beginning (refer to lines 1-28).
+of the window object.  since the page was refreshed it starts back from the beginning (refer to lines 1-28).
 
 This time, using the getItem method of the localstorage property of window object, we can retrieve the stored token
 and assign it to the variable token.  user will also not be null as the jwtDecode function will be called with 1 arguement
@@ -208,12 +208,12 @@ user can sign out
 
 if we are signed in the navbar at the top will have a button with an onCLick handler of handleSignout.
 This calls the handleSignout method which removes the currently stored token that was stored (refer to line 160)
-after the token is removed storage, this.setState is called and the user property is set to null.
+after the token is removed from storage, this.setState is called and the user property is set to null.
 setState rerenders the page.  the render method is called and checks the conditional again to see if
 isauthorizing is truthy.  it is false still so the render method returns the navbar first.
 
 This starts the lifecycle of the NavBar component.
-navbar is going to be called which calls the new operator and then calls the render method.
+Class navbar is going to be called which calls the new operator and then calls the render method.
 this returns a navbar with an awesomeapp logo and two buttons for sign in and sign up as the value of the
 user is now null again.
 
