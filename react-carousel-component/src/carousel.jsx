@@ -4,48 +4,64 @@ export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentState: 0
+      currentState: 0,
+      intervalId: null
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleClickLeft = this.handleClickLeft.bind(this);
+    this.circleClick = this.circleClick.bind(this);
   }
 
   handleClick(event) {
-    if (this.state.currentState <= 3) {
-      this.setState(prevState => ({
-        currentState: prevState.currentState + 1
-      }));
-    } else {
-      this.setState(prevState => ({
-        currentState: 0
-      }));
-    }
+    clearInterval(this.state.intervalId);
+    this.setState({
+      currentState: this.state.currentState >= this.props.images.length - 1
+        ? 0
+        : this.state.currentState + 1,
+      intervalId: setInterval(() => this.setState({
+        currentState: this.state.currentState >= this.props.images.length - 1
+          ? 0
+          : this.state.currentState + 1
+      }), 3000)
+    });
   }
 
   handleClickLeft(event) {
-    if (this.state.currentState >= 1) {
-      this.setState(prevState => ({
-        currentState: prevState.currentState - 1
-      }));
-    } else {
-      this.setState(prevState => ({
-        currentState: 4
-      }));
-    }
+    clearInterval(this.state.intervalId);
+    this.setState({
+      currentState: this.state.currentState === 0
+        ? this.props.images.length - 1
+        : this.state.currentState - 1,
+      intervalId: setInterval(() => this.setState({
+        currentState: this.state.currentState >= this.props.images.length - 1
+          ? 0
+          : this.state.currentState + 1
+      }), 3000)
+    });
   }
 
   componentDidMount() {
-    this.intervalId = setInterval(() => {
-      if (this.state.currentState <= 3) {
-        this.setState(prevState => ({
-          currentState: prevState.currentState + 1
-        }));
-      } else {
-        this.setState({
-          currentState: 0
-        });
-      }
-    }, 3000);
+    this.setState({
+      intervalId: setInterval(() => this.setState({
+        currentState: this.state.currentState >= this.props.images.length - 1
+          ? 0
+          : this.state.currentState + 1
+      }), 3000)
+    });
+  }
+
+  circleClick(event) {
+    this.setState({
+      currentState: Number(event.target.getAttribute('data-index'))
+    });
+    clearInterval(this.state.intervalId);
+    this.setState({
+      intervalId: setInterval(() => this.setState({
+        currentState: this.state.currentState >= this.props.images.length - 1
+          ? 0
+          : this.state.currentState + 1
+      }), 3000)
+    });
   }
 
   render() {
@@ -55,7 +71,7 @@ export default class Carousel extends React.Component {
         ? 'fa-solid'
         : 'fa-regular';
       return (
-          <i key={index} className={`${circlecolor} fa-circle circle`} ></i>
+          <i key={index} onClick={this.circleClick} data-index={index} className={`${circlecolor} fa-circle circle`} ></i>
       );
     });
     const images = this.props.images.map((image, index) => {
