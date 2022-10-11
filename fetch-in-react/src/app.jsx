@@ -10,13 +10,19 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     /* your code here */
-    fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json()).then(data =>
-      this.setState({
-        isLoading: false,
-        users: data
-      }));
+    // fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json()).then(data =>
+    //   this.setState({
+    //     isLoading: false,
+    //     users: data
+    //   }));
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await response.json();
+    this.setState({
+      isLoading: false,
+      users: data
+    });
   }
 
   render() {
