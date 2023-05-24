@@ -1,0 +1,47 @@
+.bars {
+  font-size: 2rem;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.drawer {
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  border: solid black 0.2rem;
+  transform: translateX(-400px);
+  transition: transform 0.3s ease-out;
+  top: -0.1rem;
+  position: fixed;
+}
+
+.show {
+  transform: translateX(0);
+}
+
+.drawer-background {
+  display: flex;
+  background-color: rgba(0 0 0 / 70%);
+  height: 100vh;
+  width: 0%;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+.stretch {
+  width: 100%;
+}
+
+.height {
+  height: 100vh;
+}
+
+.hidden {
+  display: none;
+}
